@@ -5,10 +5,27 @@
  */
 package ui;
 
+import java.util.ResourceBundle;
+
 /**
  * Factoria de la vista, decide si mostrar el mensaje desde la consola o con una interfaz gráfica
  * @author Diego
  */
 public class ViewFactory {
     
+    public View getView(){
+        View view = null;
+        String opcion =  ResourceBundle.getBundle("utilidades.config").getString("method");
+        
+        //Parametrización
+        if (opcion.equalsIgnoreCase("console")) {
+            view = new ViewImplementation();
+
+        } else if (opcion.equalsIgnoreCase("fx")) {
+            //view = new ModelBDImplementation();
+        }
+
+        return view;
+        
+    }
 }

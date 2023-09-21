@@ -16,12 +16,15 @@ public class PropertyFileImplementation implements Model {
 
     @Override
     public String getGreeting() throws EmptyFileException {
-        /*String mensaje;
-        mensaje=ResourceBundle.getBundle("utilidades.config").getString("saludo");
-        System.out.println(mensaje);
-        return mensaje;*/
-        return ResourceBundle.getBundle("utilidades.config").getString("saludo");
+        String mensaje;
+        mensaje = ResourceBundle.getBundle("utilidades.config").getString("saludo");
+        if (mensaje.isEmpty()) {
+            throw new EmptyFileException("El archivo de configuración está vacio");
+        } else {
+            return mensaje;
+        }
+        //return ResourceBundle.getBundle("utilidades.config").getString("saludo");
     }
-    
+
     
 }
