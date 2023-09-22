@@ -17,9 +17,15 @@ import ui.View;
 public class Controller {
     
     //Creamos el método run, el cual inicializará las implementaciones pasandole las interfaces como parámetro
-    public void run(View viewImplementation, Model modelImplementation) throws BDConectionException, EmptyDatabaseException, EmptyFileException{
-
-        viewImplementation.showGreeting(modelImplementation.getGreeting());
-    
+    public void run(View viewImplementation, Model modelImplementation){
+        try {
+            viewImplementation.showGreeting(modelImplementation.getGreeting());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } 
     }
 }
+    
+                
+              
+

@@ -10,7 +10,7 @@ package ui;
  * @author Diego
  */
 public class ViewImplementation implements View {
-
+    //Aqui esto tiene que extender de la main de javafx y tiene que tener el método start
     @Override
     public void showGreeting(String message) {
         System.out.println(message);

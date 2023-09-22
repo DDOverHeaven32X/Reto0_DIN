@@ -18,9 +18,10 @@ import ui.ViewFactory;
 
 /**
  * Clase Main de la aplicación
+ *
  * @author andres, Diego
  */
-public class Main extends Application {
+public class Main extends Application/*Extends javafx.application.Applcation*/ {
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -35,13 +36,8 @@ public class Main extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws BDConectionException, EmptyDatabaseException, EmptyFileException {
-        //launch(args);
-        ViewFactory view = new ViewFactory();
-        ModelFactory model = new ModelFactory();
-        Controller controller = new Controller();
-        controller.run(view.getView(), model.getModel());
-        
+    public static void main(String[] args)  {
+        launch(args);
     }
 
 }

@@ -6,6 +6,7 @@
 package ui;
 
 import java.util.ResourceBundle;
+import model.ModelBDImplementation;
 
 /**
  * Factoria de la vista, decide si mostrar el mensaje desde la consola o con una interfaz gráfica
@@ -22,7 +23,7 @@ public class ViewFactory {
             view = new ViewImplementation();
 
         } else if (opcion.equalsIgnoreCase("fx")) {
-            //view = new ModelBDImplementation();
+            view = (View) new ModelBDImplementation();
         }
 
         return view;
