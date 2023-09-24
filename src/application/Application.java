@@ -11,8 +11,9 @@ import ui.View;
 import ui.ViewFactory;
 
 /**
- *
- * @author 2dam
+ * Aplicación con el método main principal, se encarga de cargar las factorias de vista y modelo y llamar al controlador para
+ * correr la aplicación el con el método run(view, model)
+ * @author Andrés, Diego
  */
 public class Application {
 

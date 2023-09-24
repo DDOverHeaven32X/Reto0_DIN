@@ -17,7 +17,7 @@ import model.ModelFactory;
 import ui.ViewFactory;
 
 /**
- * Clase Main de la aplicación
+ * Clase Main de la aplicación java fx
  *
  * @author andres, Diego
  */
@@ -25,12 +25,11 @@ public class Main extends Application/*Extends javafx.application.Applcation*/ {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("/ui/saludo.fxml"));
+        Parent root = (Parent)loader.load();
+        Saludocontroller controller= ((Saludocontroller)loader.getController());
+        controller.setStage(stage);
+        controller.initStage(root);
     }
 
     /**
