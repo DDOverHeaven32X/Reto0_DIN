@@ -25,6 +25,7 @@ public class Application {
         Model model = modelfactory.getModel();
         Controller controller = new Controller();
         controller.run(view, model);
+        
     }
 
 }

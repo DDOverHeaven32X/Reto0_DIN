@@ -15,7 +15,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import model.ModelFactory;
 import ui.View;
+import ui.ViewFactory;
 import ui.ViewJavaFXImplementation;
 
 /**
@@ -29,8 +31,10 @@ public class Saludocontroller implements View  {
     private Pane panel;
     @FXML
     private Label lbl_saludo;
+    private ViewFactory view;
+    private ModelFactory model;
     private Stage stage;
-    private String saludo = "HOLA MUNDO";
+    
     //protected static final Logger LOGGER = Logger.getLogger("/application/SaludoController");
 
    public void initStage(Parent root) {
@@ -39,7 +43,7 @@ public class Saludocontroller implements View  {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Saludo"); 
-        showGreeting(saludo);
+        //lbl_saludo.setText(value);
         stage.show();
     }    
     public void setStage(Stage stage) {
