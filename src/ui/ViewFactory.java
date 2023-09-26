@@ -23,7 +23,7 @@ public class ViewFactory {
             view = new ViewImplementation();
 
         } else if (opcion.equalsIgnoreCase("fx")) {
-            view = (View) new ViewJavaFXImplementation();
+            view = new ViewJavaFXImplementation();
         }
 
         return view;

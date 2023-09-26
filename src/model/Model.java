@@ -12,6 +12,6 @@ import excepciones.EmptyFileException;
  * @author Andres,Diego
  */
 public interface Model {
-    public String getGreeting() throws BDConectionException, EmptyDatabaseException, EmptyFileException;
+    public String getGreeting() throws BDConectionException;
     
 }

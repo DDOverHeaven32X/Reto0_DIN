@@ -6,12 +6,13 @@
 package ui;
 
 
-import application.Main;
+
 import application.Saludocontroller;
 import excepciones.EmptyFileException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,25 +26,29 @@ import javafx.stage.Stage;
  */
 public class ViewJavaFXImplementation extends javafx.application.Application implements View {
     
+    
     @FXML
     private Label lbl;
     
-    String Greeting;
+    private static String greeting;
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-        showGreeting(Greeting);
+        
         FXMLLoader loader= new FXMLLoader(getClass().getResource("saludo.fxml"));
         Parent root = (Parent)loader.load();
         Saludocontroller controller= ((Saludocontroller)loader.getController());
         controller.setStage(primaryStage);
-        controller.showGreeting(Greeting);
+        controller.showGreeting(greeting);
         controller.initStage(root);
+        
     }
 
     @Override
     public void showGreeting(String message) {
-        lbl.setText(message);
+        greeting = message;
+        System.out.println(greeting);
+        launch(message);
     }
     
 

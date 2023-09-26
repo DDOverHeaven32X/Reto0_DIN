@@ -31,19 +31,24 @@ public class Saludocontroller implements View  {
     private Pane panel;
     @FXML
     private Label lbl_saludo;
-    private ViewFactory view;
-    private ModelFactory model;
+    @FXML
     private Stage stage;
     
-    //protected static final Logger LOGGER = Logger.getLogger("/application/SaludoController");
+    private String greeting;
+    
+    
+    protected static final Logger LOGGER = Logger.getLogger("/application/SaludoController");
 
    public void initStage(Parent root) {
         // TODO
-        //LOGGER.info("Initializing the greeting visual interface");
+        LOGGER.info("Initializing the greeting visual interface");
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Saludo"); 
-        //lbl_saludo.setText(value);
+        System.out.println(greeting);
+        lbl_saludo.setStyle("-fx-aligment: center-right");
+        lbl_saludo.setStyle("-fx-font-size: 50px");
+        lbl_saludo.setText(greeting);
         stage.show();
     }    
     public void setStage(Stage stage) {
@@ -52,7 +57,7 @@ public class Saludocontroller implements View  {
 
     @Override
     public void showGreeting(String message) {
-        lbl_saludo.setText(message);
+        this.greeting = message;
     }
     
     
