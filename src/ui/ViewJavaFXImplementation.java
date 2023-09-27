@@ -47,7 +47,6 @@ public class ViewJavaFXImplementation extends javafx.application.Application imp
     @Override
     public void showGreeting(String message) {
         greeting = message;
-        System.out.println(greeting);
         launch(message);
     }
     

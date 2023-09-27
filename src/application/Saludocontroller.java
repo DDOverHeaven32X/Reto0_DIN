@@ -45,7 +45,6 @@ public class Saludocontroller implements View  {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Saludo"); 
-        System.out.println(greeting);
         lbl_saludo.setStyle("-fx-aligment: center-right");
         lbl_saludo.setStyle("-fx-font-size: 50px");
         lbl_saludo.setText(greeting);

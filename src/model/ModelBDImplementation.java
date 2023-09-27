@@ -14,6 +14,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Clase dedicada a la implementacion del modelo respecto a la base de datos
@@ -28,6 +30,7 @@ public class ModelBDImplementation implements Model {
     private String url;
     private String user;
     private String password;
+    private Logger log;
     
     //Consultas Query
     private final String getGreeting = "SELECT * FROM mensaje";
@@ -40,19 +43,17 @@ public class ModelBDImplementation implements Model {
         this.password = configFile.getString("DBPass");
     }
     //Métodos para establecer conexión de base de datos
-    private void openConnection() {
+    public void openConnection() throws BDConectionException {
         try {
             // Class.forName(this.driverBD);
             conex = (Connection) DriverManager.getConnection(this.url, this.user, this.password);
         } catch (SQLException e) {
-            System.out.println("Error al intentar abrir la BD");
-            e.printStackTrace();
+            throw new BDConectionException("Ha ocurrido un problema con la base de datos");
         } catch (Exception e) {
-            System.out.println("Se ha abierto la base de datos");
             e.printStackTrace();
         }
     } 
-    private void closeConnection() throws SQLException {
+    public void closeConnection() throws SQLException {
         if (stmt != null) {
             stmt.close();
         }
@@ -63,7 +64,7 @@ public class ModelBDImplementation implements Model {
 
     //Método para recivir el saludo de la base de datos
     @Override
-    public String getGreeting() {
+    public String getGreeting() throws BDConectionException, EmptyDatabaseException {
         ResultSet rs = null;
         String greeting = null;
         
@@ -74,7 +75,8 @@ public class ModelBDImplementation implements Model {
             
             if (rs.next()) {
                 greeting = rs.getString(1);
-            }
+                if (greeting.isEmpty()) throw new EmptyDatabaseException("La base de datos debe de estar vacia");
+            } 
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally{
