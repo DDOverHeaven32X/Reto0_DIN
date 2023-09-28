@@ -12,6 +12,9 @@ package ui;
 public class ViewImplementation implements View {
     
     @Override
+    /**
+     * Método que se encarga de recoger el mensaje para mostrarlo
+     */
     public void showGreeting(String message) {
         System.out.println(message);
     }

@@ -21,7 +21,7 @@ public class PropertyFileImplementationTest {
     }
 
     /**
-     * Test que testea que el método lee la variable asignada en el archivo de configuración
+     * Test que comprueba que el método lee la variable asignada en el archivo de configuración
      */
     @Test
     public void testGetGreeting()  {

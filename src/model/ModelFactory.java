@@ -13,6 +13,10 @@ import java.util.ResourceBundle;
  */
 public class ModelFactory {
 
+    /**
+     * Método que crea un modelo e implementa una instacia de este dependiendo del archivo de config
+     * @return 
+     */
     public Model getModel() {
         Model modelo = null;
         String opcion = ResourceBundle.getBundle("utilidades.config").getString("type");

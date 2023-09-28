@@ -8,11 +8,6 @@ package ui;
 
 
 import application.Saludocontroller;
-import excepciones.EmptyFileException;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -33,6 +28,9 @@ public class ViewJavaFXImplementation extends javafx.application.Application imp
     private static String greeting;
     
     @Override
+    /**
+     * Método start de javaFX
+     */
     public void start(Stage primaryStage) throws Exception {
         
         FXMLLoader loader= new FXMLLoader(getClass().getResource("saludo.fxml"));
@@ -45,6 +43,9 @@ public class ViewJavaFXImplementation extends javafx.application.Application imp
     }
 
     @Override
+    /**
+     * Método de la interfaz para pasarlo al controlador de la ventana
+     */
     public void showGreeting(String message) {
         greeting = message;
         launch(message);

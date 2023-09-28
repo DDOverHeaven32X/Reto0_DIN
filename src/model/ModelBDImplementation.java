@@ -43,6 +43,10 @@ public class ModelBDImplementation implements Model {
         this.password = configFile.getString("DBPass");
     }
     //Métodos para establecer conexión de base de datos
+    /**
+     * Método para abrir la conexión por base de datos
+     * @throws excepciones.BDConectionException
+     */
     public void openConnection() throws BDConectionException {
         try {
             // Class.forName(this.driverBD);
@@ -53,6 +57,10 @@ public class ModelBDImplementation implements Model {
             e.printStackTrace();
         }
     } 
+    /**
+     * Método para cerrar la conexión con base de datos
+     * @throws java.sql.SQLException
+     */
     public void closeConnection() throws SQLException {
         if (stmt != null) {
             stmt.close();
@@ -64,6 +72,10 @@ public class ModelBDImplementation implements Model {
 
     //Método para recivir el saludo de la base de datos
     @Override
+    /**
+     * Método para recoger el saludo de base de datos
+     * @throws java.sql.SQLException
+     */
     public String getGreeting() throws BDConectionException, EmptyDatabaseException {
         ResultSet rs = null;
         String greeting = null;

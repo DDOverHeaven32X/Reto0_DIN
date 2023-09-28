@@ -13,7 +13,10 @@ import model.ModelBDImplementation;
  * @author Diego
  */
 public class ViewFactory {
-    
+    /**
+     * Método para crear una instancia de la vista dependiendo del fichero de configuración
+     * @return 
+     */
     public View getView(){
         View view = null;
         String opcion =  ResourceBundle.getBundle("utilidades.config").getString("method");

@@ -22,10 +22,9 @@ import ui.ViewJavaFXImplementation;
 
 /**
  * Controlador de la ventana que muestra el saludo
- *
  * @author Diego
  */
-public class Saludocontroller implements View  {
+public class Saludocontroller {
 
     @FXML
     private Pane panel;
@@ -36,9 +35,13 @@ public class Saludocontroller implements View  {
     
     private String greeting;
     
+   
     
-    protected static final Logger LOGGER = Logger.getLogger("/application/SaludoController");
-
+   protected static final Logger LOGGER = Logger.getLogger("/application/SaludoController");
+   /**
+     * Método initiStage, se encarga la ventana y de su ejecución
+     * @param root    
+     */
    public void initStage(Parent root) {
         // TODO
         LOGGER.info("Initializing the greeting visual interface");
@@ -54,7 +57,7 @@ public class Saludocontroller implements View  {
         this.stage = stage;
     }
 
-    @Override
+    
     public void showGreeting(String message) {
         this.greeting = message;
     }

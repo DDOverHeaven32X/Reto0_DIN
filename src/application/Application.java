@@ -17,7 +17,10 @@ import ui.ViewFactory;
  */
 public class Application {
 
-
+    /**
+     * Metodo main 
+     * @param args
+     */
     public static void main(String[] args) {
         ViewFactory viewfactory = new ViewFactory();
         View view = viewfactory.getView();
