@@ -12,6 +12,13 @@ import excepciones.EmptyFileException;
  * @author Andres,Diego
  */
 public interface Model {
+    /**
+     * Método que recive el saludo
+     * @return 
+     * @throws excepciones.BDConectionException 
+     * @throws excepciones.EmptyDatabaseException 
+     * @throws excepciones.EmptyFileException 
+     */
     public String getGreeting() throws BDConectionException, EmptyDatabaseException, EmptyFileException;
     
 }

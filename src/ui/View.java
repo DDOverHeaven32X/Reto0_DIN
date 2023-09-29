@@ -10,6 +10,10 @@ package ui;
  * @author andres, Diego
  */
 public interface View {
+    /**
+     * Método para mostrar el saludo
+     * @param message
+     */
     public void showGreeting(String message);
     
 }
