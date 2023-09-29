@@ -25,7 +25,7 @@ public class ModelFactoryTest {
         ModelFactory instance = new ModelFactory();
         Model resultadoEspe = null;
         Model resultado = instance.getModel();
-        assertEquals(resultadoEspe, resultado);
+        assertNotEquals(resultadoEspe, resultado);
     }
     
 }
